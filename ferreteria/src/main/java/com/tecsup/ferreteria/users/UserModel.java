@@ -1,15 +1,16 @@
 package com.tecsup.ferreteria.users;
 
-import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 
 import java.util.Collection;
 import java.util.List;
@@ -35,29 +36,23 @@ public class UserModel implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Long id;
-    @Column(nullable = false)
-    private String username;
+
+    @NotEmpty
+    @Email
+    private String username; // email
+
+    @NotNull
+    @Size(min = 5)
     private String password;
+
+    @NotNull
+    @Size(min = 3)
     private String firstname;
+
+    @NotNull
+    @Size(min = 3)
     private String lastname;
-    private boolean isAdmin;
-    private String profilePicture;
-    private String coverPicture;
-    private String about;
-    private String livesIn;
-    private String worksAt;
-    private String relationship;
-    private String country;
-    private Role role;
-
-    @ElementCollection
-    @CollectionTable(name = "user_followers", joinColumns = @JoinColumn(name = "user_id"))
-    private List<Long> followers;
-
-    @ElementCollection
-    @CollectionTable(name = "user_following", joinColumns = @JoinColumn(name = "user_id"))
-    private List<Long> following;
-    
+    private Role role;    
     
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

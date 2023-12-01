@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 
 @Service
@@ -61,45 +60,5 @@ public class UserService {
             e.printStackTrace();
         }
         return null;
-    }
-
-    public void followUser(Long followerId, Long targetUserId) {
-        UserModel follower = userRepository
-                                .findById(followerId)
-                                .orElseThrow(() -> 
-                                    new EntityNotFoundException("Follower not found"));
-        UserModel targetUser = userRepository
-                                .findById(targetUserId)
-                                .orElseThrow(() -> 
-                                    new EntityNotFoundException("Target user not found"));
-        // Agregar seguidor
-        if (!targetUser.getFollowers().contains(followerId)) {
-            targetUser.getFollowers().add(followerId);
-            userRepository.save(targetUser);
-        }
-        // Agregar a lista de following
-        if (!follower.getFollowing().contains(targetUserId)) {
-            follower.getFollowing().add(targetUserId);
-            userRepository.save(follower);
-        }
-    }
-
-    public void unfollowUser(Long followerId, Long targetUserId) {
-        UserModel follower = userRepository
-                                .findById(followerId)
-                                .orElseThrow(() -> 
-                                    new EntityNotFoundException("Follower not found"));
-        UserModel targetUser = userRepository
-                                .findById(targetUserId)
-                                .orElseThrow(() -> 
-                                    new EntityNotFoundException("Target user not found"));
-
-        // Quitar seguidor
-        targetUser.getFollowers().remove(followerId);
-        userRepository.save(targetUser);
-
-        // Quitar de la lista de following
-        follower.getFollowing().remove(targetUserId);
-        userRepository.save(follower);
     }
 }

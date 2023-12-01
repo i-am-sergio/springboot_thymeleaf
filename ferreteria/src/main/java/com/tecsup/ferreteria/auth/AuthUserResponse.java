@@ -39,17 +39,7 @@ public class AuthUserResponse {
                 .username(user.getUsername())
                 .firstname(user.getFirstname())
                 .lastname(user.getLastname())
-                .isAdmin(user.isAdmin())
-                .profilePicture(user.getProfilePicture())
-                .coverPicture(user.getCoverPicture())
-                .about(user.getAbout())
-                .livesIn(user.getLivesIn())
-                .worksAt(user.getWorksAt())
-                .relationship(user.getRelationship())
-                .country(user.getCountry())
                 .role(user.getRole())
-                .followers(user.getFollowers())
-                .following(user.getFollowing())
                 .build();
     }
 }
