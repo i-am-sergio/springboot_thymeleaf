@@ -21,6 +21,7 @@ public class SecurityConfig {
     private final JwtAuthFilter jwtAuthenticationFilter;
     private final AuthenticationProvider authProvider;
     
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
@@ -32,6 +33,7 @@ public class SecurityConfig {
                     authRequest
                         .requestMatchers("/auth/**").permitAll()
                         .requestMatchers("/login/**").permitAll()
+                        .requestMatchers("/resources/templates/**").permitAll()
                         // .requestMatchers("/user/**").permitAll()
                         // .requestMatchers("/posts/**").permitAll()
                         // .requestMatchers("/images/**").permitAll()

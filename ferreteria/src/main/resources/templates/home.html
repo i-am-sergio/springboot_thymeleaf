@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:replace="layout :: header-css"/>
+</head>
+
+<body>
+
+<header>
+    <div th:replace="layout :: site-header"/>
+</header>
+
+<h1>Simple Blog Demo</h1>
+Current Time: <b th:text="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}"></b>
+
+<main id="posts">
+    <article th:each="p : ${allPosts}">
+        <a href="blogPosts.html"  th:href="@{'/blog/{id}'(id=${p.id})}">
+            <h2 class="title" th:text="${p.title}">Post Title</h2>
+        </a>
+        <div>
+            <h6>Posted on: <span th:text="${#dates.format(p.createDate, 'dd-MM-yyyy HH:mm')}">No Date Set</span></h6>
+            <h6>Posted By: <span th:text="${p.username}"></span></h6>
+            <p class="content" th:text="${p.body}">Post content</p>
+        </div>
+    </article>
+</main>
+
+</body>
+
+</html>
