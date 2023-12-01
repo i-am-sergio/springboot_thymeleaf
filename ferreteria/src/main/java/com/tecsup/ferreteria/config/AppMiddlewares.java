@@ -1,4 +1,4 @@
-package com.unsa.backend.config;
+package com.tecsup.ferreteria.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

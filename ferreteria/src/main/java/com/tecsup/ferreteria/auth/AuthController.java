@@ -1,4 +1,4 @@
-package com.unsa.backend.auth;
+package com.tecsup.ferreteria.auth;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

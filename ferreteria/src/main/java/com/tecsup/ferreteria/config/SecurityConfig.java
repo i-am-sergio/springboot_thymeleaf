@@ -1,4 +1,4 @@
-package com.unsa.backend.config;
+package com.tecsup.ferreteria.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.unsa.backend.jwt.JwtAuthFilter;
+import com.tecsup.ferreteria.jwt.JwtAuthFilter;
 
 import lombok.RequiredArgsConstructor;
 

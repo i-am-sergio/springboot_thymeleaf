@@ -1,4 +1,4 @@
-package com.unsa.backend.users;
+package com.tecsup.ferreteria.users;
 
 public enum Role {
     ADMIN,

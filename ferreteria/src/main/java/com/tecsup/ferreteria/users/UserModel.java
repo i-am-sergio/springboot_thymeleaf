@@ -1,4 +1,4 @@
-package com.unsa.backend.users;
+package com.tecsup.ferreteria.users;
 
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
