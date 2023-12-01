@@ -1,9 +1,9 @@
-package com.unsa.backend.auth;
+package com.tecsup.ferreteria.auth;
 
 import java.util.List;
 
-import com.unsa.backend.users.Role;
-import com.unsa.backend.users.UserModel;
+import com.tecsup.ferreteria.users.Role;
+import com.tecsup.ferreteria.users.UserModel;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
