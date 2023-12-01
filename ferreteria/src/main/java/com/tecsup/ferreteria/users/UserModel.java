@@ -38,19 +38,19 @@ public class UserModel implements UserDetails {
     private Long id;
 
     @NotEmpty
-    @Email
+    @Email(message = "Email should be valid")
     private String username; // email
 
     @NotNull
-    @Size(min = 5)
+    @Size(min = 5, message = "Password must be at least 5 characters long")
     private String password;
 
     @NotNull
-    @Size(min = 3)
+    @Size(min = 3, message = "First name must be at least 3 characters long")
     private String firstname;
 
     @NotNull
-    @Size(min = 3)
+    @Size(min = 3, message = "Last name must be at least 3 characters long")
     private String lastname;
     private Role role;    
     
