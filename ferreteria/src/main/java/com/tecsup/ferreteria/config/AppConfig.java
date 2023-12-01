@@ -1,4 +1,4 @@
-package com.unsa.backend.config;
+package com.tecsup.ferreteria.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -12,7 +12,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.unsa.backend.users.UserRepository;
+import com.tecsup.ferreteria.users.UserRepository;
 
 
 @Configuration
