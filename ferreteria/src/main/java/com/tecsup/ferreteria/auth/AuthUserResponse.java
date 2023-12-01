@@ -1,7 +1,5 @@
 package com.tecsup.ferreteria.auth;
 
-import java.util.List;
-
 import com.tecsup.ferreteria.users.Role;
 import com.tecsup.ferreteria.users.UserModel;
 
@@ -20,17 +18,7 @@ public class AuthUserResponse {
     private String username;
     private String firstname;
     private String lastname;
-    private boolean isAdmin;
-    private String profilePicture;
-    private String coverPicture;
-    private String about;
-    private String livesIn;
-    private String worksAt;
-    private String relationship;
-    private String country;
     private Role role;
-    private List<Long> followers;
-    private List<Long> following;
 
     public static AuthUserResponse from(UserModel user, String token) {
         return AuthUserResponse.builder()
