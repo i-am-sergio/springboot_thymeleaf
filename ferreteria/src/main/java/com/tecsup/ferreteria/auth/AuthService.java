@@ -27,12 +27,6 @@ public class AuthService {
         UserDetails userDetails = userRepository.findByUsername(request.getUsername()).orElseThrow();
         String token = jwtService.getToken(userDetails);
         return AuthUserResponse.from((UserModel) userDetails, token);
-        // return AuthResponse.builder()
-        //         .token(token)
-        //         .username(user.getUsername())
-        //         .firstname(user.getFirstname())
-        //         .lastname(user.getLastname())
-        //         .build();
     }   
     public AuthUserResponse register(RegisterRequest request){
         UserModel user = UserModel.builder()
@@ -45,11 +39,5 @@ public class AuthService {
         
         userRepository.save(user);
         return AuthUserResponse.from(user, jwtService.getToken(user));
-        // return AuthResponse.builder()
-        //         .token(jwtService.getToken(user))
-        //         .username(user.getUsername())
-        //         .firstname(user.getFirstname())
-        //         .lastname(user.getLastname())
-        //         .build();
     }
 }
