@@ -31,12 +31,13 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authRequest -> 
                     authRequest
                         .requestMatchers("/auth/**").permitAll()
-                        .requestMatchers("/user/**").permitAll()
-                        .requestMatchers("/posts/**").permitAll()
-                        .requestMatchers("/images/**").permitAll()
-                        .requestMatchers("/public/**").permitAll()
-                        .requestMatchers("/chat/**").permitAll()
-                        .requestMatchers("/message/**").permitAll()
+                        .requestMatchers("/login/**").permitAll()
+                        // .requestMatchers("/user/**").permitAll()
+                        // .requestMatchers("/posts/**").permitAll()
+                        // .requestMatchers("/images/**").permitAll()
+                        // .requestMatchers("/public/**").permitAll()
+                        // .requestMatchers("/chat/**").permitAll()
+                        // .requestMatchers("/message/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManager -> 
