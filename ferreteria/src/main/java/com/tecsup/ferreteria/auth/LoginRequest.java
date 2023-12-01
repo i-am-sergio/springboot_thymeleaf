@@ -1,4 +1,4 @@
-package com.unsa.backend.auth;
+package com.tecsup.ferreteria.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

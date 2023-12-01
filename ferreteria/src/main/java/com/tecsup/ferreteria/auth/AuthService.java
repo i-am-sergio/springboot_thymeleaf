@@ -1,32 +1,25 @@
-package com.unsa.backend.auth;
+package com.tecsup.ferreteria.auth;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.unsa.backend.jwt.JwtService;
-import com.unsa.backend.users.Role;
-import com.unsa.backend.users.UserModel;
-import com.unsa.backend.users.UserRepository;
+import com.tecsup.ferreteria.jwt.JwtService;
+import com.tecsup.ferreteria.users.Role;
+import com.tecsup.ferreteria.users.UserModel;
+import com.tecsup.ferreteria.users.UserRepository;
 
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class AuthService {
 
-    @Autowired
-    UserRepository userRepository;
-
-    @Autowired
-    JwtService jwtService;
-
-    @Autowired
-    PasswordEncoder passwordEncoder;
-
+    private final UserRepository userRepository;
+    private final JwtService jwtService;
+    private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
 
     public AuthUserResponse login(LoginRequest request){
